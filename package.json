@@ -1,0 +1,25 @@
+{
+  "name": "codex-telegram",
+  "version": "2.3.2",
+  "description": "A personal Telegram topic companion for local Codex projects and chats",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "codex-telegram": "src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/relay.js",
+    "mcp": "node src/mcp-server.js",
+    "discover": "node src/discover-chat.js",
+    "doctor": "node src/cli.js doctor",
+    "test": "node scripts/run-tests.js",
+    "check": "node --check src/relay.js && node --check src/app-server.js && node --check src/mcp-server.js && node --check src/direct-file.js && node scripts/run-tests.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "zod": "^4.1.5"
+  }
+}
